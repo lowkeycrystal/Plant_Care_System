@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:plant_care_system/bluetooth/main.dart';
 import 'package:plant_care_system/scanner.dart';
 import 'register.dart';
 import 'firebase_options.dart';
@@ -112,7 +113,7 @@ class MyHomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const SizedBox(height: 80),
+                  const SizedBox(height: 70),
                   Container(
                     width: 300.0,
                     height: 300.0,
@@ -123,7 +124,7 @@ class MyHomePage extends StatelessWidget {
                           fit: BoxFit.fill),
                     ),
                   ),
-                  const SizedBox(height: 130),
+                  const SizedBox(height: 60),
                   ElevatedButton(
                     child: const Text(
                       'Scan QR Code',
@@ -166,6 +167,29 @@ class MyHomePage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const Register()),
+                      );
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    child: const Text(
+                      'Connect Bluetooth',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                        onPrimary: const Color.fromARGB(255, 199, 217, 137),
+                        primary: const Color.fromARGB(255, 18, 64, 38),
+                        elevation: 20,
+                        minimumSize: const Size(200, 60),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 20, horizontal: 88)),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BluetoothApplication()),
                       );
                     },
                   ),

@@ -243,6 +243,7 @@ class _PlantInfoState extends State<PlantInfo> {
                     const SizedBox(
                       height: 40,
                     ),
+                    Container(),
                     Padding(
                       padding: const EdgeInsets.all(5),
                       child: ElevatedButton(
